@@ -1,0 +1,42 @@
+<!--{"title": "İletişim", "description": "Charon ekibiyle iletişime geçin: sorular, iş birliği, avantaj sağlayıcılığı ve basın talepleri.", "path": "/iletisim/", "nav": ""}-->
+<section class="section" style="padding-top:88px">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">İletişim</span>
+      <h1 style="font-size:clamp(34px,4vw,48px);margin-top:20px">Bize yazın.</h1>
+      <p class="lead" style="margin-top:20px">Sorularınız, iş birliği teklifleriniz ya da geri bildirimleriniz için formu kullanabilir veya doğrudan e-posta gönderebilirsiniz.</p>
+      <div class="info-list" style="margin-top:44px">
+        <div><small>E-posta</small><p><span class="fill">[E-POSTA ADRESİ]</span></p></div>
+        <div><small>Adres</small><p><span class="fill">[ŞİRKET ADRESİ]</span></p></div>
+        <div><small>Platforma giriş</small><a class="link" href="{{APP_LOGIN}}">Giriş yap {{icon:arrow}}</a></div>
+      </div>
+    </div>
+
+    <form class="form" id="contact-form" data-form="iletisim" data-ok="Mesajınız alındı. En kısa sürede size dönüş yapacağız." novalidate>
+      <div class="fields">
+        <div class="field"><label for="c-ad">Ad soyad</label><input id="c-ad" name="ad_soyad" autocomplete="name" required></div>
+        <div class="field"><label for="c-sirket">Şirket <span class="opt">(isteğe bağlı)</span></label><input id="c-sirket" name="sirket" autocomplete="organization"></div>
+        <div class="field full"><label for="c-eposta">E-posta</label><input id="c-eposta" name="eposta" type="email" autocomplete="email" required></div>
+        <div class="field full"><label for="c-konu">Konu</label>
+          <select id="c-konu" name="konu" required>
+            <option value="">Seçin</option>
+            <option value="genel">Genel soru</option>
+            <option value="kurumsal">Kurumsal iş birliği</option>
+            <option value="startup">Startup başvurusu hakkında</option>
+            <option value="avantaj">Avantaj sağlayıcı olmak</option>
+            <option value="basin">Basın</option>
+            <option value="destek">Hesap ve teknik destek</option>
+          </select>
+        </div>
+        <div class="field full"><label for="c-mesaj">Mesajınız</label><textarea id="c-mesaj" name="mesaj" required></textarea></div>
+      </div>
+      <label class="consent"><input type="checkbox" name="kvkk_aydinlatma" value="okudum" required><span><a href="/kvkk/" target="_blank" rel="noopener">KVKK Aydınlatma Metni</a>'ni okudum ve anladım.</span></label>
+      <div class="hp" aria-hidden="true"><input type="text" name="website_url" tabindex="-1" autocomplete="off"></div>
+      <button class="btn btn-primary" type="submit">Mesajı gönder</button>
+      <div class="form-msg" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+<script>
+(function(){var k=new URLSearchParams(location.search).get("konu");var s=document.getElementById("c-konu");if(k&&s.querySelector('option[value="'+k+'"]'))s.value=k;})();
+</script>

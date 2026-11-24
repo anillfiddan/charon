@@ -1,0 +1,48 @@
+<!--{"title": "Başvuru", "description": "Charon'a kurumsal şirket ya da startup olarak başvurun. Başvurunuz incelendikten sonra ekibimiz sizinle iletişime geçer.", "path": "/basvuru/", "nav": ""}-->
+<section class="section" style="padding-top:88px">
+  <div class="wrap split">
+    <div class="sticky">
+      <span class="eyebrow">Başvuru</span>
+      <h1 style="font-size:clamp(34px,4vw,48px);margin-top:20px">Charon'a katılın.</h1>
+      <p class="lead" style="margin-top:20px">Başvurunuz ekibimiz tarafından incelenir. Uygun bulunan başvurular için hesap açılır ve size e-postayla bilgi verilir.</p>
+      <ol class="steps apply-steps" style="margin-top:40px">
+        <li><div><h3>Başvuru</h3><p>Şirketinizi ve ihtiyacınızı kısaca anlatın.</p></div></li>
+        <li><div><h3>İnceleme</h3><p>Ekibimiz başvurunuzu değerlendirir.</p></div></li>
+        <li><div><h3>Hesap</h3><p>Hesabınız açılır, platformu kullanmaya başlarsınız.</p></div></li>
+      </ol>
+      <p class="muted" style="margin-top:28px;font-size:15px">Zaten hesabınız var mı? <a class="link" href="{{APP_LOGIN}}">Giriş yapın</a></p>
+    </div>
+
+    <form class="form" id="apply-form" data-form="basvuru" data-ok="Başvurunuz alındı. Ekibimiz inceledikten sonra sizinle iletişime geçecek." novalidate>
+      <div class="seg" role="radiogroup" aria-label="Başvuru tipi">
+        <input type="radio" name="tip" id="tip-k" value="Kurumsal" checked><label for="tip-k">Kurumsal şirket</label>
+        <input type="radio" name="tip" id="tip-s" value="Startup"><label for="tip-s">Startup</label>
+      </div>
+      <div class="fields">
+        <div class="field"><label for="ad">Ad soyad</label><input id="ad" name="ad_soyad" autocomplete="name" required></div>
+        <div class="field"><label for="unvan">Unvan</label><input id="unvan" name="unvan" autocomplete="organization-title" required></div>
+        <div class="field"><label for="sirket">Şirket adı</label><input id="sirket" name="sirket" autocomplete="organization" required></div>
+        <div class="field"><label for="web">Web sitesi</label><input id="web" name="web_sitesi" type="url" placeholder="https://" autocomplete="url" required></div>
+        <div class="field"><label for="eposta">İş e-postası</label><input id="eposta" name="eposta" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="tel">Telefon <span class="opt">(isteğe bağlı)</span></label><input id="tel" name="telefon" type="tel" autocomplete="tel"></div>
+        <div class="field"><label for="sektor">Sektör</label>
+          <select id="sektor" name="sektor" required>
+            <option value="">Seçin</option>
+            <option>Finans ve bankacılık</option><option>Sigorta</option><option>Enerji</option><option>Perakende ve e-ticaret</option><option>Telekomünikasyon</option><option>Sağlık</option><option>Üretim ve sanayi</option><option>Lojistik ve taşımacılık</option><option>Otomotiv</option><option>Medya ve eğlence</option><option>Kamu</option><option>Diğer</option>
+          </select>
+        </div>
+        <div class="field"><label for="buyukluk">Çalışan sayısı</label>
+          <select id="buyukluk" name="calisan_sayisi" required>
+            <option value="">Seçin</option><option>1–10</option><option>11–50</option><option>51–250</option><option>251–1000</option><option>1000+</option>
+          </select>
+        </div>
+        <div class="field full"><label for="mesaj" id="mesaj-label">Nasıl bir çözüm arıyorsunuz? <span class="opt">(isteğe bağlı)</span></label><textarea id="mesaj" name="mesaj"></textarea></div>
+      </div>
+      <label class="consent"><input type="checkbox" name="kvkk_aydinlatma" value="okudum" required><span><a href="/kvkk/" target="_blank" rel="noopener">KVKK Aydınlatma Metni</a>'ni okudum ve anladım.</span></label>
+      <label class="consent" style="margin-top:-10px"><input type="checkbox" name="ticari_ileti" value="onay"><span>Charon'un ürün ve etkinlik duyurularını e-postayla almak istiyorum. <span class="muted">(isteğe bağlı)</span></span></label>
+      <div class="hp" aria-hidden="true"><input type="text" name="website_url" tabindex="-1" autocomplete="off"></div>
+      <button class="btn btn-primary" type="submit">Başvuruyu gönder</button>
+      <div class="form-msg" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
